@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, View } from 'react-native';
+import { AppRegistry, StyleSheet, View, StatusBar } from 'react-native';
 import PieChart from 'react-native-pie-chart';
 
 const styles = StyleSheet.create({
@@ -12,7 +12,14 @@ export default class test extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <PieChart />
+        <StatusBar
+          hidden={true}
+        />
+        <PieChart
+          series={[333, 666, 123, 789, 537]}
+          lable={['Red', 'Blue', 'Yellow', 'Green', 'Orange']}
+          backgroundColor={['#F44336','#2196F3','#FFEB3B', '#4CAF50', '#FF9800']}
+        />
       </View>
     );
   }
