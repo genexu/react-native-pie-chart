@@ -4,7 +4,10 @@ import PieChart from 'react-native-pie-chart';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ddd'
   }
 });
 
@@ -16,9 +19,11 @@ export default class test extends Component {
           hidden={true}
         />
         <PieChart
+          chart_wh={300}
           series={[333, 666, 123, 789, 537]}
           lable={['Red', 'Blue', 'Yellow', 'Green', 'Orange']}
-          backgroundColor={['#F44336','#2196F3','#FFEB3B', '#4CAF50', '#FF9800']}
+          sliceColor={['#F44336','#2196F3','#FFEB3B', '#4CAF50', '#FF9800']}
+          rotate={0}
         />
       </View>
     );

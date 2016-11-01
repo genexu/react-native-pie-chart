@@ -1,20 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 import Chart from './Chart.js';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  }
-});
-
 class PieChart extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      chart_w: 0,
-    };
-  }
   handlePercent(){
     const series = this.props.series;
     const sum = series.reduce((previous, current) => {return previous + current;}, 0);
@@ -28,34 +16,31 @@ class PieChart extends Component {
     }, [0]);
     return angle;
   }
-  handleChartShow(){
-    if (!this.state.chart_w) return;
-    return (
-      <Chart
-        chart_w={this.state.chart_w}
-        series={this.props.series}
-        percent={this.handlePercent()}
-        angle={this.handleAngle()}
-        backgroundColor={this.props.backgroundColor}
-      />
-    );
-  }
   render() {
+
     return (
-      <View style={styles.container}  onLayout={(event) => {
-        const {width, height} = event.nativeEvent.layout;
-        const container_w = (width <= height) ? width : height;
-        this.setState({chart_w: container_w});
+      <View style={{
+        width: this.props.chart_wh,
+        height: this.props.chart_wh
       }}>
-        {this.handleChartShow()}
+        <Chart
+          chart_wh={this.props.chart_wh}
+          series={this.props.series}
+          sliceColor={this.props.sliceColor}
+          rotate={this.props.rotate}
+          percent={this.handlePercent()}
+          angle={this.handleAngle()}
+        />
       </View>
     );
   }
 }
 
 PieChart.propTypes = {
+  chart_wh: React.PropTypes.number.isRequired,
   series: React.PropTypes.array.isRequired,
-  backgroundColor: React.PropTypes.array.isRequired,
+  sliceColor: React.PropTypes.array.isRequired,
+  rotate: React.PropTypes.number,
 };
 
 export default PieChart;
