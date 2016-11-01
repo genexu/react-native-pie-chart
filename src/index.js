@@ -30,6 +30,7 @@ class PieChart extends Component {
           percent={this.handlePercent()}
           angle={this.handleAngle()}
           doughnut={this.props.doughnut}
+          coverRadius={this.props.coverRadius}
         />
       </View>
     );
@@ -42,11 +43,13 @@ PieChart.propTypes = {
   sliceColor: React.PropTypes.array.isRequired,
   rotate: React.PropTypes.number,
   doughnut: React.PropTypes.bool,
+  coverRadius: React.PropTypes.number
 };
 
 PieChart.defaultProps = {
   doughnut: false,
-  rotate: 0
+  rotate: 0,
+  coverRadius: 0.6
 };
 
 export default PieChart;

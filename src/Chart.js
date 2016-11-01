@@ -10,7 +10,7 @@ class Chart extends Component {
   handleCover(){
     if (!this.props.doughnut) return;
     const radius = this.getRadius();
-    const coverRadius = this.props.chart_wh * 0.6;
+    const coverRadius = this.props.chart_wh * this.props.coverRadius;
     const coverPath = new Path()
       .moveTo(radius,radius - (coverRadius / 2))
       .arc(0,coverRadius,25)
@@ -52,6 +52,7 @@ Chart.propTypes = {
   sliceColor: React.PropTypes.array.isRequired,
   rotate: React.PropTypes.number.isRequired,
   doughnut: React.PropTypes.bool.isRequired,
+  coverRadius: React.PropTypes.number.isRequired,
 };
 
 export default Chart;
