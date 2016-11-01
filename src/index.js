@@ -45,7 +45,8 @@ PieChart.propTypes = {
 };
 
 PieChart.defaultProps = {
-  doughnut: false
+  doughnut: false,
+  rotate: 0
 };
 
 export default PieChart;

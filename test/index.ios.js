@@ -21,9 +21,7 @@ export default class test extends Component {
         <PieChart
           chart_wh={300}
           series={[333, 666, 123, 789, 537]}
-          lable={['Red', 'Blue', 'Yellow', 'Green', 'Orange']}
           sliceColor={['#F44336','#2196F3','#FFEB3B', '#4CAF50', '#FF9800']}
-          rotate={0}
         />
       </View>
     );
