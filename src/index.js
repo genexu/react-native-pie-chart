@@ -17,7 +17,6 @@ class PieChart extends Component {
     return angle;
   }
   render() {
-
     return (
       <View style={{
         width: this.props.chart_wh,
@@ -30,6 +29,7 @@ class PieChart extends Component {
           rotate={this.props.rotate}
           percent={this.handlePercent()}
           angle={this.handleAngle()}
+          doughnut={this.props.doughnut}
         />
       </View>
     );
@@ -41,6 +41,11 @@ PieChart.propTypes = {
   series: React.PropTypes.array.isRequired,
   sliceColor: React.PropTypes.array.isRequired,
   rotate: React.PropTypes.number,
+  doughnut: React.PropTypes.bool,
+};
+
+PieChart.defaultProps = {
+  doughnut: false
 };
 
 export default PieChart;

@@ -4,15 +4,22 @@ const { Surface, Group, Path, Shape } = ART;
 import Wedge from './Wedge';
 
 class Chart extends Component {
-  render() {
-    const radius = this.props.chart_wh / 2;
-    const cover = this.props.chart_wh * 0.6;
+  getRadius(){
+    return this.props.chart_wh / 2;
+  }
+  handleCover(){
+    if (!this.props.doughnut) return;
+    const radius = this.getRadius();
+    const coverRadius = this.props.chart_wh * 0.6;
     const coverPath = new Path()
-      .moveTo(radius,radius - (cover / 2))
-      .arc(0,cover,25)
-      .arc(0,-cover,25)
+      .moveTo(radius,radius - (coverRadius / 2))
+      .arc(0,coverRadius,25)
+      .arc(0,-coverRadius,25)
       .close();
+    return <Shape d={coverPath} fill="#FFF" stroke="#000000" strokeWidth={0}/>;
 
+  }
+  render() {
     return (
       <View style={{
         transform:[{rotate: `${this.props.rotate}deg`}]
@@ -23,14 +30,14 @@ class Chart extends Component {
               return (
                 <Wedge
                   key={key}
-                  outerRadius={radius}
+                  outerRadius={this.getRadius()}
                   startAngle={this.props.angle[parseInt(key)]}
                   endAngle={this.props.angle[parseInt(key)+1]}
                   fill={this.props.sliceColor[parseInt(key)]}
                 />
               );
             })}
-            <Shape d={coverPath} fill="#FFF" stroke="#000000" strokeWidth={0}/>
+            {this.handleCover()}
           </Group>
         </Surface>
       </View>
@@ -44,6 +51,7 @@ Chart.propTypes = {
   angle: React.PropTypes.array.isRequired,
   sliceColor: React.PropTypes.array.isRequired,
   rotate: React.PropTypes.number.isRequired,
+  doughnut: React.PropTypes.bool.isRequired,
 };
 
 export default Chart;
