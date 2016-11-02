@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Chart from './Chart.js';
+import Pie from './Pie.js';
 
 class PieChart extends Component {
   handleAngle(){
@@ -16,7 +16,7 @@ class PieChart extends Component {
   }
   render() {
     return (
-      <Chart
+      <Pie
         {...this.props}
         angle={this.handleAngle()}
       />

@@ -3,7 +3,7 @@ import { ART } from 'react-native';
 const { Surface, Group, Path, Shape } = ART;
 import Wedge from './Wedge';
 
-class Chart extends Component {
+class Pie extends Component {
   getRadius(){
     return this.props.chart_wh / 2;
   }
@@ -40,7 +40,7 @@ class Chart extends Component {
   }
 }
 
-Chart.propTypes = {
+Pie.propTypes = {
   chart_wh: React.PropTypes.number.isRequired,
   series: React.PropTypes.array.isRequired,
   angle: React.PropTypes.array.isRequired,
@@ -50,4 +50,4 @@ Chart.propTypes = {
   coverFill: React.PropTypes.string.isRequired,
 };
 
-export default Chart;
+export default Pie;
