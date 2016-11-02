@@ -20,7 +20,7 @@ class Pie extends Component {
   }
   render() {
     return (
-      <Surface width={this.props.chart_wh} height={this.props.chart_wh}>
+      <Surface style={this.props.style} width={this.props.chart_wh} height={this.props.chart_wh}>
         <Group>
           {Object.keys(this.props.series).map((key)=>{
             return (
@@ -48,6 +48,7 @@ Pie.propTypes = {
   doughnut: React.PropTypes.bool.isRequired,
   coverRadius: React.PropTypes.number.isRequired,
   coverFill: React.PropTypes.string.isRequired,
+  style: React.PropTypes.object.isRequired,
 };
 
 export default Pie;
