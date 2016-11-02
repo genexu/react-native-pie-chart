@@ -26,18 +26,18 @@ class PieChart extends Component {
 
 PieChart.propTypes = {
   chart_wh: React.PropTypes.number.isRequired,
+  coverFill: React.PropTypes.string,
+  coverRadius: React.PropTypes.number,
+  doughnut: React.PropTypes.bool,
   series: React.PropTypes.array.isRequired,
   sliceColor: React.PropTypes.array.isRequired,
-  doughnut: React.PropTypes.bool,
-  coverRadius: React.PropTypes.number,
-  coverFill: React.PropTypes.string,
   style: React.PropTypes.object,
 };
 
 PieChart.defaultProps = {
-  doughnut: false,
-  coverRadius: 0.6,
   coverFill: '#FFF',
+  coverRadius: 0.6,
+  doughnut: false,
   style: {}
 };
 

@@ -12,9 +12,9 @@ class Pie extends Component {
     const radius = this.getRadius();
     const coverRadius = this.props.chart_wh * this.props.coverRadius;
     const coverPath = new Path()
-      .moveTo(radius,radius - (coverRadius / 2))
-      .arc(0,coverRadius,25)
-      .arc(0,-coverRadius,25)
+      .moveTo(radius, radius - (coverRadius / 2))
+      .arc(0, coverRadius, 25)
+      .arc(0, -coverRadius, 25)
       .close();
     return <Shape d={coverPath} fill={this.props.coverFill}/>;
   }
@@ -27,9 +27,9 @@ class Pie extends Component {
               <Wedge
                 key={key}
                 outerRadius={this.getRadius()}
-                startAngle={this.props.angle[parseInt(key)]}
+                startAngle={this.props.angle[key]}
                 endAngle={this.props.angle[parseInt(key)+1]}
-                fill={this.props.sliceColor[parseInt(key)]}
+                fill={this.props.sliceColor[key]}
               />
             );
           })}
@@ -41,13 +41,13 @@ class Pie extends Component {
 }
 
 Pie.propTypes = {
-  chart_wh: React.PropTypes.number.isRequired,
-  series: React.PropTypes.array.isRequired,
   angle: React.PropTypes.array.isRequired,
-  sliceColor: React.PropTypes.array.isRequired,
-  doughnut: React.PropTypes.bool.isRequired,
-  coverRadius: React.PropTypes.number.isRequired,
+  chart_wh: React.PropTypes.number.isRequired,
   coverFill: React.PropTypes.string.isRequired,
+  coverRadius: React.PropTypes.number.isRequired,
+  doughnut: React.PropTypes.bool.isRequired,
+  series: React.PropTypes.array.isRequired,
+  sliceColor: React.PropTypes.array.isRequired,
   style: React.PropTypes.object.isRequired,
 };
 
