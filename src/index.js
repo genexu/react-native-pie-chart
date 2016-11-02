@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
 import Chart from './Chart.js';
 
 class PieChart extends Component {
@@ -18,21 +17,10 @@ class PieChart extends Component {
   }
   render() {
     return (
-      <View style={{
-        width: this.props.chart_wh,
-        height: this.props.chart_wh
-      }}>
-        <Chart
-          chart_wh={this.props.chart_wh}
-          series={this.props.series}
-          sliceColor={this.props.sliceColor}
-          rotate={this.props.rotate}
-          percent={this.handlePercent()}
-          angle={this.handleAngle()}
-          doughnut={this.props.doughnut}
-          coverRadius={this.props.coverRadius}
-        />
-      </View>
+      <Chart
+        {...this.props}
+        angle={this.handleAngle()}
+      />
     );
   }
 }
@@ -41,14 +29,12 @@ PieChart.propTypes = {
   chart_wh: React.PropTypes.number.isRequired,
   series: React.PropTypes.array.isRequired,
   sliceColor: React.PropTypes.array.isRequired,
-  rotate: React.PropTypes.number,
   doughnut: React.PropTypes.bool,
   coverRadius: React.PropTypes.number
 };
 
 PieChart.defaultProps = {
   doughnut: false,
-  rotate: 0,
   coverRadius: 0.6
 };
 
