@@ -2,16 +2,15 @@ import React, { Component } from 'react';
 import Chart from './Chart.js';
 
 class PieChart extends Component {
-  handlePercent(){
+  handleAngle(){
     const series = this.props.series;
     const sum = series.reduce((previous, current) => {return previous + current;}, 0);
-    const percent = series.reduce((previous, current) => {return previous.concat(current/sum);}, []);
-    return percent;
-  }
-  handleAngle(){
-    const percent = this.handlePercent();
-    const angle = percent.reduce((previous, current) => {
-      return previous.concat(previous[previous.length - 1] + Math.round(360 * current));
+    const angle = series.reduce((previous, current, index) => {
+      if (index == (series.length - 1)) {
+        return previous.concat(360);
+      } else {
+        return previous.concat(previous[previous.length - 1] + Math.round(360 * current/sum));
+      }
     }, [0]);
     return angle;
   }

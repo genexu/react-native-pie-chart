@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
 export default class test extends Component {
   render() {
     const chart_wh = 250
-    const series = [333, 666, 123, 789, 537]
+    const series = [123, 321, 123, 789, 537]
     const sliceColor = ['#F44336','#2196F3','#FFEB3B', '#4CAF50', '#FF9800']
 
     return (
