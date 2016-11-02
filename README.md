@@ -6,17 +6,9 @@ Simple pie chart module for your React Native app.
 <img src="http://i.imgur.com/vVt2K03.png">
 
 ## Getting Started
-1. Install
-```
-~$ npm install react-native-pie-chart --save
-```
-
+1. Install  
+`~$ npm install react-native-pie-chart --save`
 2. Link ART to your project (ios only)
-  1. Open {YourProject}.xcodeproj
-  2. Add ART.xcodeproj to {YourProject}  
-  **NOTE:** Navigate to node_modules/react-native/Libraries/ART
-  3. Add Libraries libART.a   
-  **Note:** Build Phases -> Link Binary With Libraries -> Click '+'
 
 ## Usage
 **Note:** You can find this example in test folder.
