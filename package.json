@@ -1,14 +1,21 @@
 {
   "name": "react-native-pie-chart",
   "version": "1.0.0",
-  "description": "",
+  "description": "pie chart for react native",
   "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "node ./node_modules/.bin/eslint ./src"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/genexu/react-native-pie-chart.git"
+  },
+  "author": "Gene Xu",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/genexu/react-native-pie-chart/issues"
+  },
   "devDependencies": {
     "eslint": "^3.8.1",
     "eslint-plugin-react": "^6.4.1"
