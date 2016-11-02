@@ -1,6 +1,6 @@
 {
   "name": "react-native-pie-chart",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "pie chart for react native",
   "main": "./src/index.js",
   "scripts": {

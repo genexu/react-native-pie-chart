@@ -72,6 +72,6 @@ AppRegistry.registerComponent('test', () => test);
 | coverFill           | String                    | doughnut cover fill color          |   No     | #FFF           |
 | coverRadius         | Number                    | doughnut cover radius              |   No     | 0.6            |
 | doughnut            | Bool                      | doughnut style                     |   No     | false          |
-| series              | Array < string >          | series data array                  | **Yes**  |                |
+| series              | Array < number >          | series data array                  | **Yes**  |                |
 | sliceColor          | Array < string >          | series slice color array           | **Yes**  |                |
 | style               | Object                    | pie chart style                    |   No     | {}             |
