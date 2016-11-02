@@ -37,7 +37,8 @@ export default class test extends Component {
             series={series}
             sliceColor={sliceColor}
             doughnut={true}
-            coverRadius={0.5}
+            coverRadius={0.45}
+            coverFill={'#FFF'}
           />
         </View>
       </ScrollView>

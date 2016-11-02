@@ -16,7 +16,7 @@ class Chart extends Component {
       .arc(0,coverRadius,25)
       .arc(0,-coverRadius,25)
       .close();
-    return <Shape d={coverPath} fill="#FFF" stroke="#000000" strokeWidth={0}/>;
+    return <Shape d={coverPath} fill={this.props.coverFill}/>;
   }
   render() {
     return (
@@ -47,6 +47,7 @@ Chart.propTypes = {
   sliceColor: React.PropTypes.array.isRequired,
   doughnut: React.PropTypes.bool.isRequired,
   coverRadius: React.PropTypes.number.isRequired,
+  coverFill: React.PropTypes.string.isRequired,
 };
 
 export default Chart;

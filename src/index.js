@@ -30,12 +30,14 @@ PieChart.propTypes = {
   series: React.PropTypes.array.isRequired,
   sliceColor: React.PropTypes.array.isRequired,
   doughnut: React.PropTypes.bool,
-  coverRadius: React.PropTypes.number
+  coverRadius: React.PropTypes.number,
+  coverFill: React.PropTypes.string
 };
 
 PieChart.defaultProps = {
   doughnut: false,
-  coverRadius: 0.6
+  coverRadius: 0.6,
+  coverFill: '#FFF'
 };
 
 export default PieChart;
