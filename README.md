@@ -1,14 +1,18 @@
 # react-native-pie-chart
 [![NPM](https://nodei.co/npm/react-native-pie-chart.png?downloads=true)](https://nodei.co/npm/react-native-pie-chart/)
 
-Simple pie chart module for your React Native app.
+Simple pie chart module for your React Native app.  
+**Note:** After version 1.0.5, fix android issue, support both ios and android
 
-<img src="http://i.imgur.com/vVt2K03.png">
+<img height=560 src="http://i.imgur.com/vVt2K03.png">
+<img height=560 src="http://i.imgur.com/IvLKYcx.png">
+
+
 
 ## Getting Started
 1. Install  
 `~$ npm install react-native-pie-chart --save`
-2. Link ART to your project (ios only)
+2. Link ART to your project (only ios need to do this step)
 
 ## Usage
 **Note:** You can find this example in test folder.
