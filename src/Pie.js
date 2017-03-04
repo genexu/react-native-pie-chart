@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ART } from 'react-native';
+import { Platform, ART } from 'react-native';
 const { Surface, Group, Path, Shape } = ART;
 import Wedge from './Wedge';
 
@@ -19,9 +19,11 @@ class Pie extends Component {
     return <Shape d={coverPath} fill={this.props.coverFill}/>;
   }
   render() {
+    const radius = this.getRadius();
+    const rotation = Platform.OS === 'ios' ? 0 : -90;
     return (
       <Surface style={this.props.style} width={this.props.chart_wh} height={this.props.chart_wh}>
-        <Group>
+        <Group rotation={rotation} originX={radius} originY={radius}>
           {Object.keys(this.props.series).map((key)=>{
             return (
               <Wedge

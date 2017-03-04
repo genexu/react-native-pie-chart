@@ -23,7 +23,7 @@
  */
 
 import React, {Component, PropTypes} from 'react';
-import {ART} from 'react-native';
+import {Platform, ART} from 'react-native';
 const {Shape, Path} = ART;
 
 /**
@@ -127,9 +127,24 @@ class Wedge extends Component {
     // The arguments for path.arc and path.counterArc used below are:
     // (endX, endY, radiusX, radiusY, largeAngle)
 
-    path.move(or + or * ss, or - or * sc). // move to starting point
-    arc(or * ds, or * -dc, or, or, large). // outer arc
-    line(dr * es, dr * -ec); // width of arc or wedge
+    // Update by Gene Xu to fix android issue, follow below
+    // https://github.com/facebook/react-native/blob/master/Libraries/ART/ARTSerializablePath.js
+    // https://github.com/bgryszko/react-native-circular-progress/blob/master/src/CircularProgress.js
+    // https://github.com/nihgwu/react-native-pie
+    
+    const ARC = 4;
+    const CIRCLE_X = or;
+    const CIRCLE_Y = or;
+    const RX = or - or / 2;
+    const TwoPI = 2 * Math.PI;
+
+    if (Platform.OS === 'ios') {
+      path.move(or + or * ss, or - or * sc). // move to starting point
+      arc(or * ds, or * -dc, or, or, large). // outer arc
+      line(dr * es, dr * -ec); // width of arc or wedge
+    } else {
+      path.path.push(ARC, CIRCLE_X, CIRCLE_Y, RX, startAngle / 360 * TwoPI, (startAngle / 360 * TwoPI) - ((endAngle - startAngle) / 360 * TwoPI), 0)
+    }
 
     if (ir) {
       path.counterArc(ir * -ds, ir * dc, ir, ir, large); // inner arc
@@ -160,7 +175,11 @@ class Wedge extends Component {
       path = this._createArcPath(startAngle, endAngle, or, ir);
     }
 
-    return <Shape {...this.props} d={path}/>;
+    if (Platform.OS === 'ios') {
+      return <Shape {...this.props} d={path}/>;
+    } else {
+      return <Shape d={path} stroke={this.props.fill} strokeWidth={outerRadius} strokeCap='butt' />;
+    }
   }
 }
 
