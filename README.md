@@ -2,7 +2,7 @@
 [![NPM](https://nodei.co/npm/react-native-pie-chart.png?downloads=true)](https://nodei.co/npm/react-native-pie-chart/)
 
 Simple pie chart module for your React Native app.  
-**Note:** After version 1.0.5, fix android issue, support both ios and android
+**Note:** Support both ios and android now.
 
 <img height=560 src="http://i.imgur.com/vVt2K03.png">
 <img height=560 src="http://i.imgur.com/IvLKYcx.png">
