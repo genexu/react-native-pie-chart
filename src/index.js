@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { View } from 'react-native';
 import Pie from './Pie.js';
 
 class PieChart extends Component {
@@ -31,7 +32,7 @@ PieChart.propTypes = {
   doughnut: React.PropTypes.bool,
   series: React.PropTypes.array.isRequired,
   sliceColor: React.PropTypes.array.isRequired,
-  style: React.PropTypes.object,
+  style: View.propTypes.style,
 };
 
 PieChart.defaultProps = {
