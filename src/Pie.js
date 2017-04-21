@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Platform, ART } from 'react-native';
+import { Platform, ART, View } from 'react-native';
 const { Surface, Group, Path, Shape } = ART;
 import Wedge from './Wedge';
 
@@ -50,7 +50,7 @@ Pie.propTypes = {
   doughnut: React.PropTypes.bool.isRequired,
   series: React.PropTypes.array.isRequired,
   sliceColor: React.PropTypes.array.isRequired,
-  style: React.PropTypes.object.isRequired,
+  style: View.propTypes.style.isRequired,
 };
 
 export default Pie;
