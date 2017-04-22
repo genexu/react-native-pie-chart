@@ -50,7 +50,7 @@ Pie.propTypes = {
   doughnut: React.PropTypes.bool.isRequired,
   series: React.PropTypes.array.isRequired,
   sliceColor: React.PropTypes.array.isRequired,
-  style: View.propTypes.style.isRequired,
+  style: View.propTypes.style,
 };
 
 export default Pie;
