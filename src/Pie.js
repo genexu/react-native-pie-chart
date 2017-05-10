@@ -25,15 +25,17 @@ class Pie extends Component {
       <Surface style={this.props.style} width={this.props.chart_wh} height={this.props.chart_wh}>
         <Group rotation={rotation} originX={radius} originY={radius}>
           {Object.keys(this.props.series).map((key)=>{
-            return (
-              <Wedge
-                key={key}
-                outerRadius={this.getRadius()}
-                startAngle={this.props.angle[key]}
-                endAngle={this.props.angle[parseInt(key)+1]}
-                fill={this.props.sliceColor[key]}
-              />
-            );
+            if (this.props.angle[key] != this.props.angle[parseInt(key)+1]) {
+              return (
+                <Wedge
+                  key={key}
+                  outerRadius={this.getRadius()}
+                  startAngle={this.props.angle[key]}
+                  endAngle={this.props.angle[parseInt(key)+1]}
+                  fill={this.props.sliceColor[key]}
+                />
+              );
+            }
           })}
           {this.handleCover()}
         </Group>
