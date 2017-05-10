@@ -138,7 +138,7 @@ class Wedge extends Component {
     const RX = or - or / 2;
     const TwoPI = 2 * Math.PI;
 
-    if (Platform.OS === 'ios' || (startAngle === 0 && endAngle == 360) || true) {
+    if (Platform.OS === 'ios' || (startAngle === 0 && endAngle == 360)) {
       path.move(or + or * ss, or - or * sc). // move to starting point
       arc(or * ds, or * -dc, or, or, large). // outer arc
       line(dr * es, dr * -ec); // width of arc or wedge
@@ -175,7 +175,7 @@ class Wedge extends Component {
       path = this._createArcPath(startAngle, endAngle, or, ir);
     }
 
-    if (Platform.OS === 'ios' || (startAngle === 0 && endAngle == 360) || true) {
+    if (Platform.OS === 'ios' || (startAngle === 0 && endAngle == 360)) {
       return <Shape {...this.props} d={path}/>;
     } else {
       return <Shape d={path} stroke={this.props.fill} strokeWidth={outerRadius} strokeCap='butt' />;
