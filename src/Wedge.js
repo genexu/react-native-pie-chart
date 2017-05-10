@@ -131,14 +131,14 @@ class Wedge extends Component {
     // https://github.com/facebook/react-native/blob/master/Libraries/ART/ARTSerializablePath.js
     // https://github.com/bgryszko/react-native-circular-progress/blob/master/src/CircularProgress.js
     // https://github.com/nihgwu/react-native-pie
-    
+
     const ARC = 4;
     const CIRCLE_X = or;
     const CIRCLE_Y = or;
     const RX = or - or / 2;
     const TwoPI = 2 * Math.PI;
 
-    if (Platform.OS === 'ios') {
+    if (Platform.OS === 'ios' || (startAngle === 0 && endAngle == 360) || true) {
       path.move(or + or * ss, or - or * sc). // move to starting point
       arc(or * ds, or * -dc, or, or, large). // outer arc
       line(dr * es, dr * -ec); // width of arc or wedge
@@ -175,7 +175,7 @@ class Wedge extends Component {
       path = this._createArcPath(startAngle, endAngle, or, ir);
     }
 
-    if (Platform.OS === 'ios') {
+    if (Platform.OS === 'ios' || (startAngle === 0 && endAngle == 360) || true) {
       return <Shape {...this.props} d={path}/>;
     } else {
       return <Shape d={path} stroke={this.props.fill} strokeWidth={outerRadius} strokeCap='butt' />;
