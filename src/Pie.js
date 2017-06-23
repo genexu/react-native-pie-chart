@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Platform, ART, View } from 'react-native';
+import { Platform, ART, View, ViewPropTypes } from 'react-native';
+import PropTypes from 'prop-types';
 const { Surface, Group, Path, Shape } = ART;
 import Wedge from './Wedge';
 
@@ -45,14 +46,14 @@ class Pie extends Component {
 }
 
 Pie.propTypes = {
-  angle: React.PropTypes.array.isRequired,
-  chart_wh: React.PropTypes.number.isRequired,
-  coverFill: React.PropTypes.string.isRequired,
-  coverRadius: React.PropTypes.number.isRequired,
-  doughnut: React.PropTypes.bool.isRequired,
-  series: React.PropTypes.array.isRequired,
-  sliceColor: React.PropTypes.array.isRequired,
-  style: View.propTypes.style,
+  angle: PropTypes.array.isRequired,
+  chart_wh: PropTypes.number.isRequired,
+  coverFill: PropTypes.string.isRequired,
+  coverRadius: PropTypes.number.isRequired,
+  doughnut: PropTypes.bool.isRequired,
+  series: PropTypes.array.isRequired,
+  sliceColor: PropTypes.array.isRequired,
+  style: ViewPropTypes.style,
 };
 
 export default Pie;
