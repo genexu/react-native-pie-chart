@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, ViewPropTypes } from 'react-native';
+import PropTypes from 'prop-types';
 import Pie from './Pie.js';
 
 class PieChart extends Component {
@@ -26,13 +27,13 @@ class PieChart extends Component {
 }
 
 PieChart.propTypes = {
-  chart_wh: React.PropTypes.number.isRequired,
-  coverFill: React.PropTypes.string,
-  coverRadius: React.PropTypes.number,
-  doughnut: React.PropTypes.bool,
-  series: React.PropTypes.array.isRequired,
-  sliceColor: React.PropTypes.array.isRequired,
-  style: View.propTypes.style,
+  chart_wh: PropTypes.number.isRequired,
+  coverFill: PropTypes.string,
+  coverRadius: PropTypes.number,
+  doughnut: PropTypes.bool,
+  series: PropTypes.array.isRequired,
+  sliceColor: PropTypes.array.isRequired,
+  style: ViewPropTypes.style,
 };
 
 PieChart.defaultProps = {
