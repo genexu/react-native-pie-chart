@@ -179,7 +179,12 @@ class Wedge extends Component {
     if (Platform.OS === 'ios' || (startAngle === 0 && endAngle == 360)) {
       return <Shape {...this.props} d={path}/>;
     } else {
-      return <Shape d={path} stroke={this.props.fill} strokeWidth={outerRadius} strokeCap='butt' />;
+      let size = this.props.outerRadius * 2;
+      let cx = cy = size/2;
+      let p = Path();
+      p.path.push(0, cx, cy);
+      p.path.push(4, cx, cy, outerRadius, startAngle * Math.PI / 180, endAngle * Math.PI / 180, 1);
+      return <Shape d={p} fill={this.props.fill} />;
     }
   }
 }

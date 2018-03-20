@@ -8,8 +8,9 @@
 		"reload": "npm uninstall react-native-pie-chart && npm install ../"
 	},
 	"dependencies": {
-		"react": "16.0.0-alpha.12",
-		"react-native": "0.45.1"
+		"react": "^16.3.0-alpha.2",
+		"react-native": "^0.54.2",
+		"react-native-pie-chart": "file:.."
 	},
 	"devDependencies": {
 		"babel-jest": "20.0.3",
