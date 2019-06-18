@@ -11,11 +11,11 @@ class Pie extends Component {
   handleCover(){
     if (!this.props.doughnut) return;
     const radius = this.getRadius();
-    const coverRadius = this.props.chart_wh * this.props.coverRadius;
+    const coverRadius = this.props.chart_wh * this.props.coverRadius / 2;
     const coverPath = new Path()
-      .moveTo(radius, radius - (coverRadius / 2))
-      .arc(0, coverRadius, 25)
-      .arc(0, -coverRadius, 25)
+      .moveTo(radius , radius - (coverRadius))
+      .arc(0, coverRadius * 2, coverRadius)
+      .arc(0, -coverRadius * 2, coverRadius)
       .close();
     return <Shape d={coverPath} fill={this.props.coverFill}/>;
   }
