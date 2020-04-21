@@ -19,7 +19,7 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "@react-native-community/art": *
+    "@react-native-community/art": "*"
     
   },
   "devDependencies": {
