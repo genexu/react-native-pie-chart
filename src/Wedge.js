@@ -22,10 +22,10 @@
  *
  */
 
-import React, {Component} from 'react';
-import {Platform, ART} from 'react-native';
+import React, { Component } from 'react';
+import { Platform } from 'react-native';
 import PropTypes from 'prop-types';
-const {Shape, Path} = ART;
+import { Shape, Path } from '@react-native-community/art';
 
 /**
  * Wedge is a React component for drawing circles, wedges and arcs.  Like other
@@ -47,10 +47,11 @@ class Wedge extends Component {
    * @return {number}
    */
   _degreesToRadians(degrees) {
-    if (degrees !== 0 && degrees % 360 === 0) { // 360, 720, etc.
+    if (degrees !== 0 && degrees % 360 === 0) {
+      // 360, 720, etc.
       return this.circleRadians;
     }
-    return degrees * this.radiansPerDegree % this.circleRadians;
+    return (degrees * this.radiansPerDegree) % this.circleRadians;
   }
   /**
    * createCirclePath(or, ir)
@@ -64,10 +65,16 @@ class Wedge extends Component {
   _createCirclePath(or, ir) {
     const path = new Path();
 
-    path.move(0, or).arc(or * 2, 0, or).arc(-or * 2, 0, or);
+    path
+      .move(0, or)
+      .arc(or * 2, 0, or)
+      .arc(-or * 2, 0, or);
 
     if (ir) {
-      path.move(or - ir, 0).counterArc(ir * 2, 0, ir).counterArc(-ir * 2, 0, ir);
+      path
+        .move(or - ir, 0)
+        .counterArc(ir * 2, 0, ir)
+        .counterArc(-ir * 2, 0, ir);
     }
 
     path.close();
@@ -75,16 +82,16 @@ class Wedge extends Component {
     return path;
   }
   /**
-  	 * _createArcPath(sa, ea, ca, or, ir)
-  	 *
-  	 * Creates the ReactART Path for an arc or wedge.
-  	 *
-  	 * @param {number} startAngle The starting degrees relative to 12 o'clock
-  	 * @param {number} endAngle The ending degrees relative to 12 o'clock
-  	 * @param {number} or The outer radius in pixels
-  	 * @param {number} ir The inner radius in pixels, greater than zero for an arc
-  	 * @return {object}
-  	 */
+   * _createArcPath(sa, ea, ca, or, ir)
+   *
+   * Creates the ReactART Path for an arc or wedge.
+   *
+   * @param {number} startAngle The starting degrees relative to 12 o'clock
+   * @param {number} endAngle The ending degrees relative to 12 o'clock
+   * @param {number} or The outer radius in pixels
+   * @param {number} ir The inner radius in pixels, greater than zero for an arc
+   * @return {object}
+   */
   _createArcPath(startAngle, endAngle, or, ir) {
     const path = new Path();
 
@@ -93,9 +100,7 @@ class Wedge extends Component {
     const ea = this._degreesToRadians(endAngle);
 
     // central arc angle in radians
-    const ca = sa > ea
-        ? this.circleRadians - sa + ea
-        : ea - sa;
+    const ca = sa > ea ? this.circleRadians - sa + ea : ea - sa;
 
     // cached sine and cosine values
     const ss = Math.sin(sa);
@@ -140,11 +145,20 @@ class Wedge extends Component {
     const TwoPI = 2 * Math.PI;
 
     if (Platform.OS === 'ios' || (startAngle === 0 && endAngle == 360)) {
-      path.move(or + or * ss, or - or * sc). // move to starting point
-      arc(or * ds, or * -dc, or, or, large). // outer arc
-      line(dr * es, dr * -ec); // width of arc or wedge
+      path
+        .move(or + or * ss, or - or * sc) // move to starting point
+        .arc(or * ds, or * -dc, or, or, large) // outer arc
+        .line(dr * es, dr * -ec); // width of arc or wedge
     } else {
-      path.path.push(ARC, CIRCLE_X, CIRCLE_Y, RX, startAngle / 360 * TwoPI, (startAngle / 360 * TwoPI) - ((endAngle - startAngle) / 360 * TwoPI), 0)
+      path.path.push(
+        ARC,
+        CIRCLE_X,
+        CIRCLE_Y,
+        RX,
+        (startAngle / 360) * TwoPI,
+        (startAngle / 360) * TwoPI - ((endAngle - startAngle) / 360) * TwoPI,
+        0
+      );
     }
 
     if (ir) {
@@ -177,13 +191,21 @@ class Wedge extends Component {
     }
 
     if (Platform.OS === 'ios' || (startAngle === 0 && endAngle == 360)) {
-      return <Shape {...this.props} d={path}/>;
+      return <Shape {...this.props} d={path} />;
     } else {
       let size = this.props.outerRadius * 2;
-      let cx = cy = size/2;
+      let cx = (cy = size / 2);
       let p = Path();
       p.path.push(0, cx, cy);
-      p.path.push(4, cx, cy, outerRadius, startAngle * Math.PI / 180, endAngle * Math.PI / 180, 1);
+      p.path.push(
+        4,
+        cx,
+        cy,
+        outerRadius,
+        (startAngle * Math.PI) / 180,
+        (endAngle * Math.PI) / 180,
+        1
+      );
       return <Shape d={p} fill={this.props.fill} />;
     }
   }
@@ -193,7 +215,7 @@ Wedge.propTypes = {
   outerRadius: PropTypes.number.isRequired,
   startAngle: PropTypes.number.isRequired,
   endAngle: PropTypes.number.isRequired,
-  innerRadius: PropTypes.number
+  innerRadius: PropTypes.number,
 };
 
 export default Wedge;
