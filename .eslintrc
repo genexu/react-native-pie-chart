@@ -1,0 +1,27 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "prettier",
+    "@typescript-eslint",
+    "react",
+    "react-native"
+  ],
+  "env": {
+    "browser": true
+  },
+  "extends": [
+    "airbnb",
+    "prettier",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "no-underscore-dangle": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": [ "off" ],
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": "off",
+    "react/require-default-props": "off",
+    "eqeqeq": "off",
+    "no-use-before-define": "off"
+  }
+}
