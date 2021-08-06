@@ -169,14 +169,15 @@ class Wedge extends Component {
     const ir = Math.min(innerRadius, outerRadius);
     const or = Math.max(innerRadius, outerRadius);
 
-    let path;
-    if (endAngle >= startAngle + 360) {
-      path = this._createCirclePath(or, ir);
-    } else {
-      path = this._createArcPath(startAngle, endAngle, or, ir);
-    }
+    
 
     if (Platform.OS === 'ios' || (startAngle === 0 && endAngle == 360)) {
+      let path;
+      if (endAngle >= startAngle + 360) {
+        path = this._createCirclePath(or, ir);
+      } else {
+        path = this._createArcPath(startAngle, endAngle, or, ir);
+      }
       return <Shape {...this.props} d={path}/>;
     } else {
       let size = this.props.outerRadius * 2;
