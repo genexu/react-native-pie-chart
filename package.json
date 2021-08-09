@@ -2,15 +2,16 @@
   "name": "react-native-pie-chart",
   "version": "2.0.1",
   "description": "pie chart for react native",
-  "main": "./transpiled/index.js",
+  "main": "./dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc",
     "tsc:watch": "tsc --watch",
     "pretty": "prettier './src/**/*.ts*' --write --config .prettierrc",
     "lint": "eslint --quiet './src/**/*.ts*'",
-    "check": "npm run pretty && npm run tsc && npm run lint",
-    "build": "babel src --out-dir transpiled --extensions '.ts,.tsx'"
+    "check": "npm run pretty && npm run lint && npm run tsc",
+    "build": "babel src --out-dir dist --extensions '.ts,.tsx'"
   },
   "repository": {
     "type": "git",

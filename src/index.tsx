@@ -3,7 +3,7 @@ import { StyleProp, ViewStyle } from 'react-native';
 
 import Pie from './Pie';
 
-type Props = {
+export type Props = {
   widthAndHeight: number;
   series: number[];
   sliceColor: string[];
