@@ -2,14 +2,15 @@
   "name": "react-native-pie-chart",
   "version": "2.0.1",
   "description": "pie chart for react native",
-  "main": "./src/index.js",
+  "main": "./transpiled/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc",
     "tsc:watch": "tsc --watch",
     "pretty": "prettier './src/**/*.ts*' --write --config .prettierrc",
     "lint": "eslint --quiet './src/**/*.ts*'",
-    "check": "npm run pretty && npm run tsc && npm run lint"
+    "check": "npm run pretty && npm run tsc && npm run lint",
+    "build": "babel src --out-dir transpiled --extensions '.ts,.tsx'"
   },
   "repository": {
     "type": "git",
@@ -20,12 +21,14 @@
   "bugs": {
     "url": "https://github.com/genexu/react-native-pie-chart/issues"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": ">=16.6.0",
     "react-native": ">=0.58.0",
     "@react-native-community/art": ">=1.1.2"
   },
+  "dependencies": {},
   "devDependencies": {
+    "@babel/cli": "7.14.8",
     "@babel/core": "7.14.8",
     "@babel/eslint-parser": "7.14.9",
     "@babel/runtime": "7.14.8",
