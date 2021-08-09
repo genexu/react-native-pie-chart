@@ -4,7 +4,7 @@ import { StyleProp, ViewStyle } from 'react-native';
 import Pie from './Pie';
 
 type Props = {
-  chartWidthAndHeight: number;
+  widthAndHeight: number;
   series: number[];
   sliceColor: string[];
   coverFill?: string;
@@ -14,7 +14,7 @@ type Props = {
 };
 
 const PieChart = ({
-  chartWidthAndHeight,
+  widthAndHeight,
   series,
   sliceColor,
   coverFill = '#FFF',
@@ -38,7 +38,7 @@ const PieChart = ({
 
   return (
     <Pie
-      chartWidthAndHeight={chartWidthAndHeight}
+      widthAndHeight={widthAndHeight}
       series={series}
       sliceColor={sliceColor}
       coverFill={coverFill}

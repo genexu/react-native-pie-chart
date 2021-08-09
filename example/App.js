@@ -3,7 +3,7 @@ import { StyleSheet, ScrollView , StatusBar, Text, View} from 'react-native';
 import PieChart from 'react-native-pie-chart';
 
 const App = () => {
-  const chartWidthAndHeight = 250
+  const widthAndHeight = 250
   const series = [123, 321, 123, 789, 537]
   const sliceColor = ['#F44336','#2196F3','#FFEB3B', '#4CAF50', '#FF9800']
   return (
@@ -14,13 +14,13 @@ const App = () => {
         />
         <Text style={styles.title}>Basic</Text>
         <PieChart
-          chartWidthAndHeight={chartWidthAndHeight}
+          widthAndHeight={widthAndHeight}
           series={series}
           sliceColor={sliceColor}
         />
         <Text style={styles.title}>Doughnut</Text>
         <PieChart
-          chartWidthAndHeight={chartWidthAndHeight}
+          widthAndHeight={widthAndHeight}
           series={series}
           sliceColor={sliceColor}
           doughnut={true}

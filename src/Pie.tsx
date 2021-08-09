@@ -7,7 +7,7 @@ import Wedge from './Wedge';
 
 type Props = {
   angle: number[];
-  chartWidthAndHeight: number;
+  widthAndHeight: number;
   coverFill: string;
   coverRadius: number;
   doughnut: boolean;
@@ -18,7 +18,7 @@ type Props = {
 
 const Pie = ({
   angle,
-  chartWidthAndHeight,
+  widthAndHeight,
   coverFill,
   coverRadius,
   doughnut,
@@ -32,7 +32,7 @@ const Pie = ({
     }
 
     const radius = getRadius();
-    const actualCoverRadius = chartWidthAndHeight * coverRadius;
+    const actualCoverRadius = widthAndHeight * coverRadius;
     const coverPath = new Path()
       .moveTo(radius, radius - actualCoverRadius / 2)
       .arc(0, actualCoverRadius, 25)
@@ -42,12 +42,12 @@ const Pie = ({
     return <Shape d={coverPath} fill={coverFill} />;
   };
 
-  const getRadius = () => chartWidthAndHeight / 2;
+  const getRadius = () => widthAndHeight / 2;
 
   const radius = getRadius();
   const rotation = Platform.OS === 'ios' ? 0 : -90;
   return (
-    <Surface style={style} width={chartWidthAndHeight} height={chartWidthAndHeight}>
+    <Surface style={style} width={widthAndHeight} height={widthAndHeight}>
       {/* @ts-expect-error 'rotation' is not defined in the types, but actually exists */}
       <Group rotation={rotation} originX={radius} originY={radius}>
         {Object.keys(series).flatMap((key) => {
