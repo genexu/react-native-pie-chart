@@ -33,6 +33,7 @@
     "@babel/core": "7.14.8",
     "@babel/eslint-parser": "7.14.9",
     "@babel/runtime": "7.14.8",
+    "@react-native-community/art": "1.2.0",
     "@react-native-community/eslint-config": "3.0.0",
     "@types/react": "17.0.15",
     "@types/react-native": "0.64.12",
