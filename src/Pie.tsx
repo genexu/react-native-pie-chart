@@ -5,7 +5,7 @@ import { Surface, Group, Path, Shape } from '@react-native-community/art';
 
 import Wedge from './Wedge';
 
-type Props = {
+export type Props = {
   angle: number[];
   widthAndHeight: number;
   coverFill: string;
