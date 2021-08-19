@@ -90,6 +90,14 @@ To setup and run the example app follow these instructions:
 ~$ npx react-native run-android
 ```
 
+## TypeScript
+
+The npm package includes TypeScript types.
+
+## Upgrading from version one
+
+The only breaking change between version one and two is `chart_wh` prop. It is renamed to `widthAndHeight`. Beside that, there shouldn't be any issue upgrading.
+
 ## Props
 
 | Property            | Type                      | Description                        | Required | Default        |

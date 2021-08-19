@@ -22,6 +22,12 @@
   "bugs": {
     "url": "https://github.com/genexu/react-native-pie-chart/issues"
   },
+  "keywords": [
+    "react",
+    "react-native",
+    "chart",
+    "pie-chart"
+  ],
   "peerDependencies": {
     "react": ">=16.6.0",
     "react-native": ">=0.58.0",
