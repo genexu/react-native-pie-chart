@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { StyleProp, ViewStyle } from 'react-native';
 
 import Pie from './Pie';
@@ -21,7 +21,7 @@ const PieChart = ({
   coverRadius = 0.6,
   doughnut = false,
   style = {},
-}: Props): ReactNode => {
+}: Props): JSX.Element => {
   const handleAngle = () => {
     const sum = series.reduce((previous, current) => previous + current, 0);
     const angle = series.reduce(
