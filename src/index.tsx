@@ -24,6 +24,16 @@ const PieChart = ({
 }: Props): JSX.Element => {
   const handleAngle = () => {
     const sum = series.reduce((previous, current) => previous + current, 0);
+
+    series.forEach(s => {
+      if (s < 0) {
+        throw Error('Invalid series: all numbers should be positive');
+      }
+    })
+    if (sum <= 0) {
+      throw Error('Invalid series: sum of series is zero');
+    }
+
     const angle = series.reduce(
       (previous, current, index) => {
         if (index == series.length - 1) {

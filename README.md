@@ -111,3 +111,7 @@ The only breaking change between version one and two is `chart_wh` prop. It is r
 | series              | Array < number >          | series data array                  | **Yes**  |                |
 | sliceColor          | Array < string >          | series slice color array           | **Yes**  |                |
 | style               | Object                    | pie chart style                    |   No     | {}             |
+
+`series` should be a list of all positive (or zero) numbers. The sum of the series cannot be zero.
+
+The size of the `sliceColor` array should be equal to the size of the `series` array.
