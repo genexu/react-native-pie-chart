@@ -1,6 +1,6 @@
 {
   "name": "react-native-pie-chart",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "pie chart for react native",
   "main": "./dist/index.js",
   "types": "dist/index.d.ts",
