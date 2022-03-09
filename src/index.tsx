@@ -39,7 +39,7 @@ const PieChart = ({
         if (index == series.length - 1) {
           return previous.concat(360);
         }
-        return previous.concat(previous[previous.length - 1] + Math.round((360 * current) / sum));
+        return previous.concat(previous[previous.length - 1] + Math.floor((360 * current) / sum));
       },
       [0]
     );
