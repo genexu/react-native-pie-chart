@@ -29,7 +29,7 @@ Here's a quick start code. Refer to the `example` directory for a fully working 
 
 ```javascript
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView , StatusBar, Text, View } from 'react-native';
+import { StyleSheet, ScrollView , Text, View } from 'react-native';
 import PieChart from 'react-native-pie-chart';
 
 export default class TestChart extends Component {
