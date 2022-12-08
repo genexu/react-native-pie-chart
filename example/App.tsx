@@ -1,17 +1,15 @@
 import React from 'react';
-import { StyleSheet, ScrollView , StatusBar, Text, View} from 'react-native';
+import {StyleSheet, ScrollView, StatusBar, Text, View} from 'react-native';
 import PieChart from 'react-native-pie-chart';
 
 const App = () => {
-  const widthAndHeight = 250
-  const series = [123, 321, 123, 789, 537]
-  const sliceColor = ['#F44336','#2196F3','#FFEB3B', '#4CAF50', '#FF9800']
+  const widthAndHeight = 250;
+  const series = [123, 321, 123, 789, 537];
+  const sliceColor = ['#F44336', '#2196F3', '#FFEB3B', '#4CAF50', '#FF9800'];
   return (
-    <ScrollView style={{flex: 1}}>
+    <ScrollView style={styles.scrollContainer}>
       <View style={styles.container}>
-        <StatusBar
-          hidden={true}
-        />
+        <StatusBar hidden={true} />
         <Text style={styles.title}>Basic</Text>
         <PieChart
           widthAndHeight={widthAndHeight}
@@ -30,17 +28,20 @@ const App = () => {
       </View>
     </ScrollView>
   );
-}
+};
 
 const styles = StyleSheet.create({
+  scrollContainer: {
+    flex: 1,
+  },
   container: {
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   title: {
     fontSize: 24,
-    margin: 10
-  }
+    margin: 10,
+  },
 });
 
 export default App;
