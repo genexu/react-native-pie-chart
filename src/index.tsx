@@ -25,11 +25,11 @@ const PieChart = ({
   const handleAngle = () => {
     const sum = series.reduce((previous, current) => previous + current, 0);
 
-    series.forEach(s => {
+    series.forEach((s) => {
       if (s < 0) {
         throw Error('Invalid series: all numbers should be positive');
       }
-    })
+    });
     if (sum <= 0) {
       throw Error('Invalid series: sum of series is zero');
     }
@@ -43,6 +43,7 @@ const PieChart = ({
       },
       [0]
     );
+
     return angle;
   };
 

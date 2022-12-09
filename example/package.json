@@ -6,14 +6,14 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
+    "tsc": "tsc",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
     "@react-native-community/art": "1.2.0",
     "react": "18.1.0",
     "react-native": "0.70.6",
-    "react-native-pie-chart": "2.0.2"
+    "react-native-pie-chart": "file://home/aidin/workspace/aidin36/react-native-pie-chart/react-native-pie-chart-2.0.3.tgz"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
