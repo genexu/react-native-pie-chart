@@ -22,6 +22,7 @@
     "react/jsx-filename-extension": "off",
     "react/require-default-props": "off",
     "eqeqeq": "off",
-    "no-use-before-define": "off"
+    "no-use-before-define": "off",
+    "react/function-component-definition": [2, { "namedComponents": "arrow-function", "unnamedComponents": "arrow-function" } ]
   }
 }

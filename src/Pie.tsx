@@ -47,6 +47,7 @@ const Pie = ({
   const radius = getRadius();
   const rotation = Platform.OS === 'ios' ? 0 : -90;
   return (
+    // @ts-expect-error property 'children' is not defined in the types, but actually exists
     <Surface style={style} width={widthAndHeight} height={widthAndHeight}>
       {/* @ts-expect-error 'rotation' is not defined in the types, but actually exists */}
       <Group rotation={rotation} originX={radius} originY={radius}>
