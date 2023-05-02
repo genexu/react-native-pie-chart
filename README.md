@@ -1,3 +1,8 @@
+# This repo is moved
+
+From version 3.0.0, the code is rewritten, and the repo is moved here: https://github.com/aidin36/react-native-pie-chart
+Please open issues or pull requests on the new repository.
+
 # react-native-pie-chart
 [![npm version](https://img.shields.io/npm/v/react-native-pie-chart)](https://www.npmjs.com/package/react-native-pie-chart)
 [![npm downloads](https://img.shields.io/npm/dt/react-native-pie-chart?logo=npm)](https://www.npmjs.com/package/react-native-pie-chart)
