@@ -57,7 +57,6 @@ export default class TestChart extends Component {
             widthAndHeight={widthAndHeight}
             series={series}
             sliceColor={sliceColor}
-            doughnut={true}
             coverRadius={0.45}
             coverFill={'#FFF'}
           />
